@@ -391,7 +391,7 @@ Subscribe an email to HubSpot marketing communications.
 
 #### `POST /udxauth`
 
-Authenticate with UDX (Universal Destinations & Experiences) API and get access token.
+Authenticate with UDX (Universal Studios Experience) API and get access token.
 
 **Request Body:** None
 
