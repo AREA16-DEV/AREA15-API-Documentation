@@ -166,7 +166,7 @@ Apply a promotional code to a cart.
 
 #### `POST /upsert-user`
 
-Create or update a user in the ticketing system.
+Create or update a user in the ticketing system. **The cart will automatically be assigned to the user after creation/update.**
 
 **Request Body:**
 ```json
