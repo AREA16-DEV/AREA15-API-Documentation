@@ -1,5 +1,3 @@
-# AREA15 API
-
 Serverless API for AREA15 ticketing and checkout operations built with AWS Lambda and API Gateway using the Serverless Framework.
 
 ## Table of Contents
