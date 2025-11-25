@@ -146,22 +146,6 @@ Remove tickets from a cart.
 
 ---
 
-#### `POST /user-cart`
-
-Assign a cart to a user identity.
-
-**Request Body:**
-```json
-{
-  "cart_id": "cart-id",      // Required: Cart ID
-  "identity_id": "user-id"   // Required: User identity ID
-}
-```
-
-**Response:** Cart assignment confirmation.
-
----
-
 #### `POST /promo-code`
 
 Apply a promotional code to a cart.
@@ -195,11 +179,12 @@ Create or update a user in the ticketing system.
     "postal": "89101",         // Required: ZIP code
     "birthdate": "1990-01-01", // Required: Date string
     "optin": true              // Required: Boolean for marketing opt-in
-  }
+  },
+  "cartId": "cart-id"          // Required: Cart ID to assign to the user
 }
 ```
 
-**Response:** User creation/update confirmation.
+**Response:** User creation/update confirmation. The cart is automatically assigned to the user.
 
 ---
 
