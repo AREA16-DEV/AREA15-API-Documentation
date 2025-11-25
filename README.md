@@ -290,7 +290,7 @@ Complete cart checkout with payment.
 
 ### Content & Kiosk
 
-#### `POST /fetch-content`
+#### `POST /terms-and-privacy`
 
 Fetch terms and conditions or privacy policy content from AREA15 website.
 
