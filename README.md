@@ -5,8 +5,6 @@ Serverless API for AREA15 ticketing and kiosk operations built with AWS Lambda a
 ## Table of Contents
 
 - [Authentication](#authentication)
-- [Deployment](#deployment)
-- [Local Development](#local-development)
 - [API Endpoints](#api-endpoints)
   - [Stripe & Hardware](#stripe--hardware)
   - [Events & Sessions](#events--sessions)
@@ -25,45 +23,6 @@ All endpoints require an API key to be included in the request headers. Include 
 
 ```
 x-api-key: <your-api-key>
-```
-
-The API key is stored in `config.yml` and is required for all API calls. Requests without a valid API key will receive a `401 Unauthorized` response.
-
-**Note:** OPTIONS requests (CORS preflight) are exempt from API key validation.
-
-## Deployment
-
-To deploy the API to AWS:
-
-```bash
-serverless deploy
-```
-
-After deployment, you'll receive the API Gateway endpoint URL which you can use to make requests.
-
-## Local Development
-
-Start the local server using serverless-offline:
-
-```bash
-serverless offline
-```
-
-or
-
-```bash
-serverless dev
-```
-
-This will start a local emulator on `http://localhost:3000` (default port).
-
-**Important:** When testing locally, you still need to include the API key in your requests:
-
-```bash
-curl -H "x-api-key: <your-api-key>" \
-     -H "Content-Type: application/json" \
-     -X POST http://localhost:3000/your-endpoint \
-     -d '{"your": "data"}'
 ```
 
 ## API Endpoints
