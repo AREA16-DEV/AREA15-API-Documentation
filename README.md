@@ -14,6 +14,7 @@ Serverless API for AREA15 ticketing and checkout operations built with AWS Lambd
   - [HubSpot Integration](#hubspot-integration)
   - [UDX Integration](#udx-integration)
   - [Upsell](#upsell)
+  - [Other Notes](#cors)
 
 ## Authentication
 
@@ -441,9 +442,11 @@ All endpoints support CORS and include appropriate headers for cross-origin requ
 
 Our webapps utilize **@stripe/react-stripe-js** 
 
+```json
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISH_KEY, {
     stripeAccount: process.env.NEXT_PUBLIC_STRIPE_ACCOUNT
 });
+```
 
 ## KIOSK APP NOTES
 
@@ -460,5 +463,3 @@ Our Physical reader applicaitons utlize **@capacitor-community/stripe-terminal**
 5. Start of checkout, if there are giftcards, check value of giftcard and use appropriate chckout parameters based on full payment or partial payment
 6. Final Checkout with any left over after promos and giftcards
 7. User will get automatic emails from AREA15 on successful checkout
-
-
