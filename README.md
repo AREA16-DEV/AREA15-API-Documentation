@@ -434,3 +434,31 @@ Error response format:
 ## CORS
 
 All endpoints support CORS and include appropriate headers for cross-origin requests. OPTIONS preflight requests are automatically handled.
+
+---
+
+## WEBAPP NOTES
+
+Our webapps utilize **@stripe/react-stripe-js** 
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISH_KEY, {
+    stripeAccount: process.env.NEXT_PUBLIC_STRIPE_ACCOUNT
+});
+
+## KIOSK APP NOTES
+
+Our Physical reader applicaitons utlize **@capacitor-community/stripe-terminal** for Android and **@stripe/terminal-js** for Web-based 
+
+---
+
+## REQUIRED TICKET FLOW
+
+1. Get Events, Sessions, Ticket Groups, Ticket Types
+2. Add/Remove Tickets to cart based on selected session and Ticket Types (This process will automatically create a cart)
+3. Ingest user info (First Name, Last Name, Email, Phone (optional), Zip (optional), Birthdate (optional)) (This process will create a user in our system and attach them to the cart)
+4. Allow for Promo code or Giftcard inputs (Promo code can be added to cart any time before checkout and will return adjusted cart values/fees -- Giftcards will need to be tracked on frontend until checkout) 
+5. Start of checkout, if there are giftcards, check value of giftcard and use appropriate chckout parameters based on full payment or partial payment
+6. Final Checkout with any left over after promos and giftcards
+7. User will get automatic emails from AREA15 on successful checkout
+
+
